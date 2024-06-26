@@ -2,7 +2,6 @@ import os
 import argparse
 import sys
 import jwt
-import argparse
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('pem', type=argparse.FileType('rb'),
@@ -12,5 +11,8 @@ print(args)
 pk = args.pem.read()
 
 sk = jwt.jwk_from_pem(pk)
+
+print(sk)
+print(pk)
 
 
