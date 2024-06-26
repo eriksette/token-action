@@ -12,5 +12,5 @@ runs:
       id: token
       run: |
         python3 -m pip install -r ${GITHUB_ACTION_PATH}/requirements.txt
-        echo "${{ inputs.pem-key }}" | python3 tokenAction.py - >> "$GITHUB_OUTPUT"
+        echo ${{ inputs.pem-key }} | python3 tokenAction.py - >> "$GITHUB_OUTPUT"
       shell: bash
