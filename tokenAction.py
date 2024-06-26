@@ -4,14 +4,9 @@ import sys
 import jwt
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('pem', type=argparse.FileType('rb'),
-                        help='Dry run only. Dumps generated i2c command.')
+parser.add_argument('pem', type=argparse.FileType('r'),
+                        help='Dry run only. Dumps generated i2c command.', default=sys.stdin)
 args = parser.parse_args()
-print(args)
 pk = args.pem.read()
-
-sk = jwt.jwk_from_pem(pk)
-
-print(sk)
-print(pk)
+sk = jwt.jwk_from_pem(str.encode(pk))
 print("token=%s" % sk)
