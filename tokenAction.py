@@ -14,3 +14,4 @@ sk = jwt.jwk_from_pem(pk)
 
 print(sk)
 print(pk)
+print("token=%s" % sk)
