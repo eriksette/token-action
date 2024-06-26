@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: selftest
-        uses: eriksette/token-action
+        uses: eriksette/token-action@v1
         with:
           pem-key: ${{ secrets.PEM_KEY }}
    
