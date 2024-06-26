@@ -1,0 +1,16 @@
+name: token
+inputs:
+  pen-key:
+    required: true
+outputs:
+  token:
+    value: ${{ steps.token.outputs.token }}  
+runs:
+  using: "composite"
+  steps:
+    - name: Access token
+      id: token
+      run: |
+        python3 -m pip install -r ${GITHUB_ACTION_PATH}/requirements.txt
+        echo "${{ inputs.pem-key }}" | python3 token.py - >> "$GITHUB_OUTPUT"
+      shell: bash

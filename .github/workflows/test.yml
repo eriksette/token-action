@@ -1,0 +1,14 @@
+name: selftest
+run-name: selftest ${{ github.actor }} 
+on: [workflow_dispatch]
+jobs:
+  selftest:
+    name: selftest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: selftest
+        uses: eriksette/token-action
+        with:
+          pem-key: ${{ secrets.PEM_KEY }}
+   
