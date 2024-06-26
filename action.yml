@@ -1,6 +1,6 @@
 name: token
 inputs:
-  pen-key:
+  pem-key:
     required: true
 outputs:
   token:
